@@ -1,26 +1,22 @@
 import React from 'react';
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 
-function ActionLink() {
-    function handleClick(e) {
-        e.preventDefault();
-        console.log('Le lien a été cliqué.');
-    }
 
-    return (
-        <Button onClick={handleClick}>Rechercher</Button>
-    );
-}
 
 export function Search(props) {
+    const actionLink = (event) => {
+        event.preventDefault();
+        console.log(event);
+    }
+
         return (
-            <Form>
+            <Form onSubmit={actionLink}>
                 <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+                    <Label for="textsearch">URL</Label>
+                    <Input type="text" name="text" id="textsearch" placeholder="with a placeholder" />
                 </FormGroup>
 
-                <ActionLink/>
+                <Button>Rechercher</Button>
             </Form>
         );
 }
