@@ -1,0 +1,1 @@
+# short-firebase-link
